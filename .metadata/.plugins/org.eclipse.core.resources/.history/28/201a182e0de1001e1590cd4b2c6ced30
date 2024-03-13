@@ -1,0 +1,7 @@
+spring.application.name=Spring-JDBC-MTM
+spring.datasource.username=root
+spring.datasource.password=MahesH1516@
+spring.datasource.url=jdbc:mysql://localhost:3306/maheshdb
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+

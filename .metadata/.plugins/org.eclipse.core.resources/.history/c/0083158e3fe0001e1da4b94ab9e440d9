@@ -1,0 +1,12 @@
+package in.mahesh.entity;
+
+import java.time.LocalDate;
+
+public class Books {
+	private Integer bId;
+	private Double bPrice;
+	private String bName;
+	private LocalDate publisheDate;
+	private Author author;
+
+}

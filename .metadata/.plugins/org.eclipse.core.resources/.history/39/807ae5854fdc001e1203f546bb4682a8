@@ -1,0 +1,112 @@
+package in.mahesh.entity;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+@Entity
+public class PersonEntity {
+	@Id
+	@GeneratedValue
+	private Integer pId;
+	private String pname;
+	private String pGender;
+	private Date pDOB;
+	private byte[] img;
+	private byte[] resume;
+	@Column(updatable = false)
+	@CreationTimestamp
+	private LocalDate insertDate;
+	@Column(insertable = false)
+	@UpdateTimestamp
+	private LocalDate updateDate;
+	
+	public PersonEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public PersonEntity(Integer pId, String pname, String pGender, Date pDOB, byte[] img, byte[] resume,
+			LocalDate insertDate, LocalDate updateDate) {
+		super();
+		this.pId = pId;
+		this.pname = pname;
+		this.pGender = pGender;
+		this.pDOB = pDOB;
+		this.img = img;
+		this.resume = resume;
+//		this.insertDate = insertDate;
+//		this.updateDate = updateDate;
+	}
+
+	public Integer getpId() {
+		return pId;
+	}
+	public void setpId(Integer pId) {
+		this.pId = pId;
+	}
+	public String getPname() {
+		return pname;
+	}
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	public String getpGender() {
+		return pGender;
+	}
+	public void setpGender(String pGender) {
+		this.pGender = pGender;
+	}
+	public Date getpDOB() {
+		return pDOB;
+	}
+	public void setpDOB(Date pDOB) {
+		this.pDOB = pDOB;
+	}
+	public byte[] getImg() {
+		return img;
+	}
+	public void setImg(byte[] img) {
+		this.img = img;
+	}
+	public byte[] getResume() {
+		return resume;
+	}
+	public void setResume(byte[] resume) {
+		this.resume = resume;
+	}
+
+	public LocalDate getInsertDate() {
+		return insertDate;
+	}
+
+	public void setInsertDate(LocalDate insertDate) {
+		this.insertDate = insertDate;
+	}
+
+	public LocalDate getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(LocalDate updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	@Override
+	public String toString() {
+		return "PersonEntity [pId=" + pId + ", pname=" + pname + ", pGender=" + pGender + ", pDOB=" + pDOB + ", img="
+				+ Arrays.toString(img) + ", resume=" + Arrays.toString(resume) + ", insertDate=" + insertDate
+				+ ", updateDate=" + updateDate + "]";
+	}
+	
+	
+	
+
+}

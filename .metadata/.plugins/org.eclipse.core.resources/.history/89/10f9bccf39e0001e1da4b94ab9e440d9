@@ -1,0 +1,18 @@
+package in.mahesh.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+@Entity
+public class Person {
+	@Id
+	private Integer pId;
+	private String pName;
+	private String gender;
+	private LocalDate DOB;
+	@OneToOne
+	private PassPort passPort;
+
+}

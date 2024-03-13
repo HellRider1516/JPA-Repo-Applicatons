@@ -1,0 +1,14 @@
+package in.mahesh.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import in.mahesh.entity.PersonEntity;
+
+public interface IPersonRepo extends JpaRepository<PersonEntity, Integer> {
+	@Query(value="Select p_id from person_entity order by img",nativeQuery = true)
+	public List<PersonEntity> getDetails();
+
+}

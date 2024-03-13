@@ -1,0 +1,24 @@
+package in.mahesh.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+@Entity
+public class Books {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer bId;
+	private Double bPrice;
+	private String bName;
+	private LocalDate publisheDate;
+	
+	
+	@ManyToOne
+	private Author author;
+
+}

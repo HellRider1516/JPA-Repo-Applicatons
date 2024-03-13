@@ -1,0 +1,15 @@
+package in.mahesh.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import in.mahesh.entity.PersonEntity;
+@Repository
+public interface IPersonRepo extends JpaRepository<PersonEntity, Integer> {
+	@Query("pId from PersonEntity")
+	public List<PersonEntity> getDetails();
+
+}

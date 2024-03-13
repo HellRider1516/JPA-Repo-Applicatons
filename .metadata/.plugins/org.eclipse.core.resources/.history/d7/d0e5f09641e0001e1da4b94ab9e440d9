@@ -1,0 +1,61 @@
+package in.mahesh;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.mahesh.Repo.AuthorRepo;
+import in.mahesh.Repo.BookRepo;
+import in.mahesh.entity.Author;
+import in.mahesh.entity.Books;
+
+@Service
+public class AuthorService {
+	private AuthorRepo authorRepo;
+	private BookRepo bookRepo;
+	@Autowired
+	public AuthorService(AuthorRepo authorRepo, BookRepo bookRepo) {
+		super();
+		this.authorRepo = authorRepo;
+		this.bookRepo = bookRepo;
+	}
+	
+	public void authorSave() {
+		Author a=new Author();
+		a.setAge(45);
+		a.setaName("Rajesh");
+		a.setDOB(LocalDate.of(1888, 1, 1));
+		a.setGender("Male");
+		
+		
+		Books b=new Books();
+		b.setbName("Java");
+		b.setbPrice(800000.0);
+		b.setPublisheDate(LocalDate.of(2000, 1, 1));
+		b.setbName("HTML");
+		b.setbPrice(90000.0);
+		b.setPublisheDate(LocalDate.of(2000, 2, 2));
+		b.setAid(a.getaId());
+		
+		
+		a.setBook(b);
+		b.setAuthor(a);
+		
+		
+		authorRepo.save(a);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
