@@ -1,7 +1,0 @@
-package in.mahesh.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface PersonRepo extends JpaRepository<T, ID> {
-
-}
